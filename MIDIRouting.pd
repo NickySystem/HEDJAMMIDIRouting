@@ -1,0 +1,28 @@
+#N canvas -11 -11 1920 1016 12;
+#X msg 241 148 listen 6969;
+#X obj 241 182 netreceive -u;
+#X floatatom 241 245 5 0 0 0 - - -;
+#X obj 241 350 noteout;
+#X msg 264 278 127;
+#X msg 287 309 1;
+#X text 336 149 HEDJAM udp Port;
+#X text 350 182 Receive udp data;
+#X text 373 221 Route HEDJAM udp data;
+#X text 297 279 Velocity;
+#X text 322 310 MIDI Channel;
+#X obj 272 49 cnv 15 150 40 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X text 285 61 HEDJAM MIDI Router;
+#X text 167 246 MIDI Note;
+#X obj 241 221 route HEDJAM_Midi;
+#X obj 601 263 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X text 625 264 Set Midi Channel and Velocity;
+#X connect 0 0 1 0;
+#X connect 1 0 14 0;
+#X connect 2 0 3 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 2;
+#X connect 14 0 2 0;
+#X connect 15 0 4 0;
+#X connect 15 0 5 0;
